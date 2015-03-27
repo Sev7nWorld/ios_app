@@ -29,6 +29,8 @@ class RegistViewController: UIViewController {
         if self.phoneNumTf.text == "" {
             self.phoneNumTf.text = "请填写正确的手机号"
             
+            
+            
         }
     }
 
