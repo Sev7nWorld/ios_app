@@ -10,9 +10,15 @@ import UIKit
 
 class PublisherTableViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    @IBOutlet weak var searchTf: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //let image = UIImage(named: "search_icon")!.resizableImageWithCapInsets(
+           // UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14))
+        //let btnImg = UIImage(named: "search_icon")
+        //btnImg?.resizableImageWithCapInsets(resizingMode(top:0,))
+        //searchTf.background = image
+        
         // Do any additional setup after loading the view.
     }
 

@@ -313,21 +313,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDD-a5-GEU">
-                                <rect key="frame" x="-202" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="集市" id="7jV-TS-n05">
-                                        <barButtonItem key="leftBarButtonItem" image="default_user_head" id="5Vy-1r-3Hc"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="JvQ-Et-kSl">
-                                            <connections>
-                                                <segue destination="vHy-3C-bf7" kind="show" id="wZs-4d-WkS"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="211" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DYv-jy-ROK">
-                                <rect key="frame" x="0.0" y="64" width="600" height="431"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="211" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DYv-jy-ROK">
+                                <rect key="frame" x="6" y="92" width="600" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="211" id="kUG-DT-eK5">
@@ -415,19 +402,45 @@
                                     <outlet property="delegate" destination="khx-3m-Xh7" id="1HK-RX-r0G"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="search_input_back" translatesAutoresizingMaskIntoConstraints="NO" id="0KC-uz-mgc">
+                                <rect key="frame" x="16" y="64" width="568" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDD-a5-GEU">
+                                <rect key="frame" x="16" y="20" width="568" height="44"/>
+                                <items>
+                                    <navigationItem title="集市" id="7jV-TS-n05">
+                                        <barButtonItem key="leftBarButtonItem" image="default_user_head" id="5Vy-1r-3Hc"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="JvQ-Et-kSl">
+                                            <connections>
+                                                <segue destination="vHy-3C-bf7" kind="show" id="wZs-4d-WkS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DYv-jy-ROK" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leadingMargin" id="0EP-ab-qWP"/>
-                            <constraint firstItem="hDD-a5-GEU" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leading" id="BqN-6k-Jvo"/>
-                            <constraint firstItem="DYv-jy-ROK" firstAttribute="bottom" secondItem="QAl-eL-vq8" secondAttribute="top" id="FCS-dB-uO1"/>
-                            <constraint firstItem="DYv-jy-ROK" firstAttribute="top" secondItem="hDD-a5-GEU" secondAttribute="bottom" id="K7e-rF-Shd"/>
-                            <constraint firstAttribute="trailing" secondItem="hDD-a5-GEU" secondAttribute="trailing" id="LVS-p1-4gd"/>
-                            <constraint firstItem="hDD-a5-GEU" firstAttribute="top" secondItem="5rl-aM-Bne" secondAttribute="top" constant="20" id="RLU-CA-bNB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DYv-jy-ROK" secondAttribute="trailing" constant="-16" id="tg5-GC-Kza"/>
+                            <constraint firstItem="0KC-uz-mgc" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leadingMargin" id="1mp-uC-IQD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hDD-a5-GEU" secondAttribute="trailing" id="2SF-2i-xWB"/>
+                            <constraint firstItem="hDD-a5-GEU" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leadingMargin" id="DSM-1q-Avw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0KC-uz-mgc" secondAttribute="trailing" id="Hzh-BK-J5t"/>
+                            <constraint firstItem="hDD-a5-GEU" firstAttribute="top" secondItem="5rl-aM-Bne" secondAttribute="topMargin" constant="20" id="bFJ-IG-XMC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DYv-jy-ROK" secondAttribute="trailing" constant="-16" id="dh7-kk-vJM"/>
+                            <constraint firstItem="0KC-uz-mgc" firstAttribute="top" secondItem="hDD-a5-GEU" secondAttribute="bottom" constant="1" id="jQ8-ry-yMT"/>
+                            <constraint firstItem="DYv-jy-ROK" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leadingMargin" constant="-16" id="t2X-aN-zNh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="集市" image="main_tab_recruitment" id="uzy-vo-1CZ"/>
+                    <connections>
+                        <outlet property="searchTf" destination="0KC-uz-mgc" id="rRJ-qx-joT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ul-ol-Qal" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,6 +696,7 @@
         <image name="main_tab_recruitment" width="36" height="36"/>
         <image name="main_tab_topic" width="36" height="36"/>
         <image name="province_city_icon" width="20" height="30"/>
+        <image name="search_input_back" width="568" height="30"/>
         <image name="xzwelcome" width="720" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
