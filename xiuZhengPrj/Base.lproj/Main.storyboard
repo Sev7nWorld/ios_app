@@ -177,15 +177,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="手机号／用户名" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-MS-xSD">
-                                <rect key="frame" x="16" y="72" width="568" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="aKC-xg-LEL"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLH-2k-EZ4">
                                 <rect key="frame" x="135" y="207" width="330" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.23254845001915003" blue="0.14316357598656726" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,9 +186,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ff7-Eu-87h" kind="popoverPresentation" popoverAnchorView="fLH-2k-EZ4" id="bcy-1y-xin">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="login:" destination="Jfo-8a-6JE" eventType="touchUpInside" id="Cxh-eg-kkR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ana-en-hiq">
@@ -224,12 +213,21 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请输入密码" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DZC-JW-vvT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DZC-JW-vvT">
                                 <rect key="frame" x="16" y="118" width="568" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="Yhd-sh-BX4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号／用户名" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-MS-xSD">
+                                <rect key="frame" x="16" y="72" width="568" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="aKC-xg-LEL"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -255,7 +253,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="loginBotton" destination="fLH-2k-EZ4" id="Xrd-ad-eFA"/>
                         <outlet property="passwordTf" destination="DZC-JW-vvT" id="McJ-XG-yEd"/>
                         <outlet property="userNameTf" destination="mNa-MS-xSD" id="LwF-xZ-tNj"/>
                     </connections>
@@ -313,8 +310,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDD-a5-GEU">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="集市" id="7jV-TS-n05">
+                                        <barButtonItem key="leftBarButtonItem" image="default_user_head" id="5Vy-1r-3Hc"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="JvQ-Et-kSl">
+                                            <connections>
+                                                <segue destination="vHy-3C-bf7" kind="show" id="wZs-4d-WkS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="2Wr-Ey-xEh">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="211" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DYv-jy-ROK">
-                                <rect key="frame" x="6" y="92" width="600" height="431"/>
+                                <rect key="frame" x="6" y="124" width="600" height="402"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="211" id="kUG-DT-eK5">
@@ -402,45 +416,21 @@
                                     <outlet property="delegate" destination="khx-3m-Xh7" id="1HK-RX-r0G"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" background="search_input_back" translatesAutoresizingMaskIntoConstraints="NO" id="0KC-uz-mgc">
-                                <rect key="frame" x="16" y="64" width="568" height="30"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
-                                </accessibility>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDD-a5-GEU">
-                                <rect key="frame" x="16" y="20" width="568" height="44"/>
-                                <items>
-                                    <navigationItem title="集市" id="7jV-TS-n05">
-                                        <barButtonItem key="leftBarButtonItem" image="default_user_head" id="5Vy-1r-3Hc"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="JvQ-Et-kSl">
-                                            <connections>
-                                                <segue destination="vHy-3C-bf7" kind="show" id="wZs-4d-WkS"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0KC-uz-mgc" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leadingMargin" id="1mp-uC-IQD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hDD-a5-GEU" secondAttribute="trailing" id="2SF-2i-xWB"/>
-                            <constraint firstItem="hDD-a5-GEU" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leadingMargin" id="DSM-1q-Avw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0KC-uz-mgc" secondAttribute="trailing" id="Hzh-BK-J5t"/>
-                            <constraint firstItem="hDD-a5-GEU" firstAttribute="top" secondItem="5rl-aM-Bne" secondAttribute="topMargin" constant="20" id="bFJ-IG-XMC"/>
+                            <constraint firstItem="2Wr-Ey-xEh" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leading" id="7xR-E8-FEM"/>
+                            <constraint firstItem="DYv-jy-ROK" firstAttribute="top" secondItem="2Wr-Ey-xEh" secondAttribute="bottom" id="Awk-q8-xD9"/>
+                            <constraint firstAttribute="trailing" secondItem="hDD-a5-GEU" secondAttribute="trailing" id="DZT-Ur-YbJ"/>
+                            <constraint firstItem="2Wr-Ey-xEh" firstAttribute="top" secondItem="hDD-a5-GEU" secondAttribute="bottom" id="V79-Oy-kLm"/>
+                            <constraint firstItem="hDD-a5-GEU" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leading" id="XO1-W6-JVK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DYv-jy-ROK" secondAttribute="trailing" constant="-16" id="dh7-kk-vJM"/>
-                            <constraint firstItem="0KC-uz-mgc" firstAttribute="top" secondItem="hDD-a5-GEU" secondAttribute="bottom" constant="1" id="jQ8-ry-yMT"/>
+                            <constraint firstItem="hDD-a5-GEU" firstAttribute="top" secondItem="DRp-Dw-eo3" secondAttribute="bottom" id="re3-Pa-ehY"/>
                             <constraint firstItem="DYv-jy-ROK" firstAttribute="leading" secondItem="5rl-aM-Bne" secondAttribute="leadingMargin" constant="-16" id="t2X-aN-zNh"/>
+                            <constraint firstAttribute="trailing" secondItem="2Wr-Ey-xEh" secondAttribute="trailing" id="x5c-MI-TaU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="集市" image="main_tab_recruitment" id="uzy-vo-1CZ"/>
-                    <connections>
-                        <outlet property="searchTf" destination="0KC-uz-mgc" id="rRJ-qx-joT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ul-ol-Qal" sceneMemberID="firstResponder"/>
             </objects>
@@ -592,7 +582,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Uf6-md-LDu">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ff7-Eu-87h" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="indexStoryboardID" automaticallyAdjustsScrollViewInsets="NO" id="Ff7-Eu-87h" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2aN-km-s2c">
@@ -696,10 +686,6 @@
         <image name="main_tab_recruitment" width="36" height="36"/>
         <image name="main_tab_topic" width="36" height="36"/>
         <image name="province_city_icon" width="20" height="30"/>
-        <image name="search_input_back" width="568" height="30"/>
         <image name="xzwelcome" width="720" height="1280"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ha7-1k-ML2"/>
-    </inferredMetricsTieBreakers>
 </document>

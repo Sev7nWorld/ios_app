@@ -17,13 +17,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let redColor = UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
-        //self.navigationController?.navigationBar.backgroundColor = UIColor.redColor()
         
-        //loginBotton.frame = CGRectMake(90, 200, 200, 60)
-        //loginBotton.frame = CGRect(x:100, y:100,width:100,height:50)
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,14 +26,17 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func login(sender: UIButton) {
+        var username = userNameTf.text
+        var password = passwordTf.text
+        if username == "admin" && password == "admin"{
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            var vc:UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("indexStoryboardID") as UIViewController
+            presentViewController(vc, animated: true, completion: nil)
+        }else{
+            var alertView = UIAlertView(title: "提示", message: "您输入的用户名或者密码有误，请重新尝试！", delegate: nil, cancelButtonTitle: "确定")
+            alertView.show()
+        }
     }
-    */
-
+   
 }
