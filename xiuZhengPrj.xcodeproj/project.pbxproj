@@ -16,6 +16,7 @@
 		D949632E1AC2F7ED00F91F6B /* xiuZhengPrjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D949632D1AC2F7ED00F91F6B /* xiuZhengPrjTests.swift */; };
 		D9A63DBC1AC2F99100B8B0AE /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A63DBB1AC2F99100B8B0AE /* IndexViewController.swift */; };
 		D9A63DBE1AC3056800B8B0AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A63DBD1AC3056800B8B0AE /* LoginViewController.swift */; };
+		D9BCE0C61ACBBF7300B0570B /* DistrictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BCE0C51ACBBF7300B0570B /* DistrictModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D949632D1AC2F7ED00F91F6B /* xiuZhengPrjTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xiuZhengPrjTests.swift; sourceTree = "<group>"; };
 		D9A63DBB1AC2F99100B8B0AE /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		D9A63DBD1AC3056800B8B0AE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D9BCE0C51ACBBF7300B0570B /* DistrictModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				D9A63DBB1AC2F99100B8B0AE /* IndexViewController.swift */,
 				D9A63DBD1AC3056800B8B0AE /* LoginViewController.swift */,
 				D90D2DA51AC3AE9700D60E24 /* RegistViewController.swift */,
+				D9BCE0C51ACBBF7300B0570B /* DistrictModel.swift */,
 			);
 			path = xiuZhengPrj;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				D90D2DA61AC3AE9700D60E24 /* RegistViewController.swift in Sources */,
 				D9A63DBE1AC3056800B8B0AE /* LoginViewController.swift in Sources */,
 				A6B5C5CA1AC42A7A00243BF3 /* PublisherTableViewController.swift in Sources */,
+				D9BCE0C61ACBBF7300B0570B /* DistrictModel.swift in Sources */,
 				D94963181AC2F7ED00F91F6B /* AppDelegate.swift in Sources */,
 				D9A63DBC1AC2F99100B8B0AE /* IndexViewController.swift in Sources */,
 			);

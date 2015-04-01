@@ -14,11 +14,15 @@ class RegistViewController: UIViewController {
     @IBOutlet weak var checkCodeTf: UITextField!
     @IBOutlet weak var passwordTf: UITextField!
     
-    var colors = ["Red","Yellow","Green","Blue"]
+    var districtModel: DistrictModel = DistrictModel()
+    var proArr: [String] = []
+    var ctiArr: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        proArr = districtModel.getAllProvience()
+        ctiArr = districtModel.getProCtisByIndex(0)
         // Do any additional setup after loading the view.
         
     }
@@ -49,15 +53,32 @@ class RegistViewController: UIViewController {
     */
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int)->Int {
-        return colors.count
+        if component==0 {
+            return proArr.count
+        }else{
+            return ctiArr.count
+        }
+        
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return colors[row]
+        if component==0 {
+            return proArr[row]
+        }else{
+            return ctiArr[row]
+        }
+        
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int,inComponent component:Int){
+        if component==0{
+            ctiArr = districtModel.getProCtisByIndex(row)
+            pickerView.reloadComponent(1)
+        }
     }
 
 }
