@@ -111,7 +111,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zX-do-Y0J">
-                                <rect key="frame" x="135" y="268" width="330" height="40"/>
+                                <rect key="frame" x="135" y="394" width="330" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,13 +128,22 @@
                                     <action selector="checkCodeEditEnd:" destination="r2x-SH-l0z" eventType="editingDidEnd" id="8cP-L5-dXa"/>
                                 </connections>
                             </textField>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25f-ZM-2A4">
+                                <rect key="frame" x="-27" y="224" width="600" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="r2x-SH-l0z" id="jbs-A5-RKG"/>
+                                    <outlet property="delegate" destination="r2x-SH-l0z" id="xjE-an-QOi"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="m6D-Kl-ImE" secondAttribute="trailing" id="Bcs-xt-Xdn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TSk-Qn-Ot7" secondAttribute="trailing" id="UhW-HM-hp9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="25f-ZM-2A4" secondAttribute="trailing" constant="50" id="Wat-xM-Qx1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lfo-8H-eK6" secondAttribute="trailing" id="Zdu-d9-fxQ"/>
+                            <constraint firstItem="25f-ZM-2A4" firstAttribute="leading" secondItem="gW5-vb-wnD" secondAttribute="leadingMargin" constant="50" id="apE-lK-olf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6zX-do-Y0J" secondAttribute="trailing" constant="50" id="pAn-9W-kgj"/>
                             <constraint firstItem="lfo-8H-eK6" firstAttribute="leading" secondItem="gW5-vb-wnD" secondAttribute="leadingMargin" id="pfc-vK-mIM"/>
                             <constraint firstItem="m6D-Kl-ImE" firstAttribute="leading" secondItem="gW5-vb-wnD" secondAttribute="leadingMargin" id="t0b-0Y-5pX"/>
