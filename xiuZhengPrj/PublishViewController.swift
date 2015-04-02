@@ -80,9 +80,15 @@ class PublishViewController: UIViewController,UITextViewDelegate {
     
     @IBAction func submit(sender: AnyObject) {
         var request = HTTPTask()
-        let params: Dictionary<String,AnyObject> = ["username": "test", "password":"test123"]
-        request.POST("http://www.gongfupos.com/login", parameters: params, success: {(response: HTTPResponse) in
-                println("response: \(response.text())")
+        request.requestSerializer = JSONRequestSerializer()
+        request.responseSerializer = JSONResponseSerializer()
+        let params: Dictionary<String,AnyObject> = ["city": "北京", "county":"","name":"","prov":"北京","type":"餐饮美食"]
+        request.GET("http://www.gongfupos.com/company/shopinfo_search", parameters: params, success: {(response: HTTPResponse) in
+            if let dic = response.responseObject as? Dictionary<String,AnyObject>{
+                var info = dic["COMPANYNAME"] as String
+                println("json data : \(info)")
+                println("response: \(response.text()!)")
+            }
             },failure: {(error: NSError, response: HTTPResponse?) in
                 println("error: \(error)")
         })
