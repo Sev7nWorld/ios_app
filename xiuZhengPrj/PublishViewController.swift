@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHTTP
 
 class PublishViewController: UIViewController,UITextViewDelegate {
 
@@ -20,8 +21,8 @@ class PublishViewController: UIViewController,UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentTextView.text = "请输入发布信息的内容"
-        
+       
+        contentTextView.text = "请输入信息内容"
         proArr = districtModel.getAllProvience()
         ctiArr = districtModel.getProCtisByIndex(0)
     }
@@ -74,6 +75,17 @@ class PublishViewController: UIViewController,UITextViewDelegate {
             ctiArr = districtModel.getProCtisByIndex(row)
             pickerView.reloadComponent(1)
         }
+    }
+    
+    
+    @IBAction func submit(sender: AnyObject) {
+        var request = HTTPTask()
+        let params: Dictionary<String,AnyObject> = ["username": "test", "password":"test123"]
+        request.POST("http://www.gongfupos.com/login", parameters: params, success: {(response: HTTPResponse) in
+                println("response: \(response.text())")
+            },failure: {(error: NSError, response: HTTPResponse?) in
+                println("error: \(error)")
+        })
     }
 
 }

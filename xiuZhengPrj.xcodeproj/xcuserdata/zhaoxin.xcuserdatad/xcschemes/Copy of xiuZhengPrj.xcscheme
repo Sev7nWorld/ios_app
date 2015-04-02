@@ -68,7 +68,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
@@ -104,8 +104,8 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
-      customArchiveName = "&#x4fee;&#x6b63;&#x836f;&#x4e1a;"
+      buildConfiguration = "Debug"
+      customArchiveName = "&#x4fee;&#x6b63;"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
